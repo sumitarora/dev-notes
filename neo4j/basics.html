@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Basics | TITLE OF YOUR BOOK</title>
+        <title>Basics | Dev Notes</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -32,13 +32,9 @@
         
 <link rel="stylesheet" href="../gitbook/style.css">
 
-    
-    <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
-    
-
 
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="1450804217199">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="1450954445727">
     
 
 <div class="book-summary">
@@ -96,6 +92,22 @@
                             <b>1.1.</b>
                         
                          Basics
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="docker/docker-file.html">
+            
+                
+                    <a href="../docker/docker-file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         Docker File
                     </a>
                 
             
@@ -318,7 +330,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >TITLE OF YOUR BOOK</a>
+        <a href="../" >Dev Notes</a>
     </h1>
 </div>
 
@@ -326,79 +338,95 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <p>View All Nodes
-START n=node(<em>) RETURN n
-Delete a Node
-START n = node(4) //Fetch a Node
-DELETE n // Call delete
-Remove a node and connected relationships
-START n = node(3) MATCH n-[r]-() DELETE n, r // Call Delete
-Remove a property
-START n = node(2)
-DELETE n.title
-RETURN n
-Fetch node by id
-START n=node(1)
-RETURN n
-Fetch multiple nodes
-START n=node(1, 2, 3)
-RETURN n
-Fetch Node by index lookup
-START n=node:nodes(name = &quot;A&quot;)
-RETURN n
-View All Relationships
-START r=relationship(</em>) RETURN r;
-Fetch Relationship by id
-START r=relationship(0)
-RETURN
-Relationship by index lookup
-START r=relationship:rels(name = &quot;Andrés&quot;)
-RETURN r
-Fetch Node by index query
-START n=node:nodes(&quot;name:A&quot;)
-RETURN n
-Fetch Multiple starting points
-START a=node(1), b=node(2)
-RETURN a,b
-Delete all relations
-start r=relationship(*) delete r;
-Create a node
-Create n
-Create a node and set properties
-CREATE n = {name : &#39;Andres&#39;, title : &#39;Developer&#39;}
-Create a relationship
-START a=node(1), b=node(2) CREATE a-[r:RELTYPE]-&gt;b RETURN r
-Create a relationship and set properties
-START a=node(1), b=node(2)
-CREATE a-[r:RELTYPE {name : a.name + &#39;&lt;-&gt;&#39; + b.name }]-&gt;b
-RETURN r
-Create a full path
-CREATE p = (andres {name:&#39;Andres&#39;})-[:WORKS_AT]-&gt;neo&lt;-[:WORKS_AT]-(michael {name:&#39;Michael&#39;})
-RETURN p
-Create single node from map
-create ({props})
-This query can be used in the following fashion:</p>
-<p>Map<String, Object> props = new HashMap<String, Object>();
-props.put( &quot;name&quot;, &quot;Andres&quot; );
-props.put( &quot;position&quot;, &quot;Developer&quot; );</p>
-<p>Map<String, Object> params = new HashMap<String, Object>();
-params.put( &quot;props&quot;, props );
-engine.execute( &quot;create ({props})&quot;, params );
-Create multiple nodes from maps
-create (n {props}) return n</p>
-<p>Eg.
-Map<String, Object> n1 = new HashMap<String, Object>();
-n1.put( &quot;name&quot;, &quot;Andres&quot; );
-n1.put( &quot;position&quot;, &quot;Developer&quot; );</p>
-<p>Map<String, Object> n2 = new HashMap<String, Object>();
-n2.put( &quot;name&quot;, &quot;Michael&quot; );
-n2.put( &quot;position&quot;, &quot;Developer&quot; );</p>
-<p>Map<String, Object> params = new HashMap<String, Object>();
-List<Map<String, Object>&gt; maps = Arrays.asList( n1, n2 );
-params.put( &quot;props&quot;, maps );
-engine.execute( &quot;create (n {props}) return n&quot;, params );</p>
+                        <h1 id="commands">Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View All Nodes</td>
+<td>START n=node(*) RETURN n</td>
+</tr>
+<tr>
+<td>Delete a Node</td>
+<td>START n = node(4) //Fetch a Node <br>DELETE n // Call delete</td>
+</tr>
+<tr>
+<td>Remove a node and connected relationships</td>
+<td>START n = node(3) MATCH n-[r]-() DELETE n, r // Call Delete</td>
+</tr>
+<tr>
+<td>Remove a property</td>
+<td>START n = node(2)<br> DELETE n.title<br> RETURN n</td>
+</tr>
+<tr>
+<td>Fetch node by id</td>
+<td>START n=node(1)<br>RETURN n</td>
+</tr>
+<tr>
+<td>Fetch multiple nodes</td>
+<td>START n=node(1, 2, 3)<br>RETURN n</td>
+</tr>
+<tr>
+<td>Fetch Node by index lookup</td>
+<td>START n=node:nodes(name = &quot;A&quot;)<br>RETURN n</td>
+</tr>
+<tr>
+<td>View All Relationships</td>
+<td>START r=relationship(*) RETURN r;<br>Fetch Relationship by id<br>START r=relationship(0)<br>RETURN</td>
+</tr>
+<tr>
+<td>Relationship by index lookup</td>
+<td>START r=relationship:rels(name = &quot;Andrés&quot;)<br>RETURN r</td>
+</tr>
+<tr>
+<td>Fetch Node by index query</td>
+<td>START n=node:nodes(&quot;name:A&quot;)<br>RETURN n</td>
+</tr>
+<tr>
+<td>Fetch Multiple starting points</td>
+<td>START a=node(1), b=node(2)<br>RETURN a,b</td>
+</tr>
+<tr>
+<td>Delete all relations</td>
+<td>start r=relationship(*) delete r;</td>
+</tr>
+<tr>
+<td>Create a node</td>
+<td>Create n</td>
+</tr>
+<tr>
+<td>Create a node and set properties</td>
+<td>CREATE n = {name : &#39;Andres&#39;, title : &#39;Developer&#39;}</td>
+</tr>
+<tr>
+<td>Create a relationship</td>
+<td>START a=node(1), b=node(2) CREATE a-[r:RELTYPE]-&gt;b RETURN r</td>
+</tr>
+<tr>
+<td>Create a relationship and set properties</td>
+<td>START a=node(1), b=node(2)<br>CREATE a-[r:RELTYPE {name : a.name + &#39;&lt;-&gt;&#39; + b.name }]-&gt;b<br>RETURN r</td>
+</tr>
+<tr>
+<td>Create a full path</td>
+<td>CREATE p = (andres {name:&#39;Andres&#39;})-[:WORKS_AT]-&gt;neo&lt;-[:WORKS_AT]-(michael {name:&#39;Michael&#39;})<br>RETURN p</td>
+</tr>
+<tr>
+<td>Create single node from map</td>
+<td>create ({props}) <br> This query can be used in the following fashion: <br> Map<String, Object> props = new HashMap<String, Object>(); <br> props.put( &quot;name&quot;, &quot;Andres&quot; ); <br> props.put( &quot;position&quot;, &quot;Developer&quot; ); <br><br> Map<String, Object> params = new HashMap<String, Object>(); <br> params.put( &quot;props&quot;, props ); <br> engine.execute( &quot;create ({props})&quot;, params );</td>
+</tr>
+<tr>
+<td>Create multiple nodes from maps</td>
+<td>create (n {props}) return n <br> Eg.<br>Map<String, Object> n1 = new HashMap<String, Object>();<br>n1.put( &quot;name&quot;, &quot;Andres&quot; );<br>n1.put( &quot;position&quot;, &quot;Developer&quot; );<br><br>Map<String, Object> n2 = new HashMap<String, Object>();<br>n2.put( &quot;name&quot;, &quot;Michael&quot; );<br>n2.put( &quot;position&quot;, &quot;Developer&quot; );<br><br>Map<String, Object> params = new HashMap<String, Object>();<br>List<Map<String, Object>&gt; maps = Arrays.asList( n1, n2 );<br>params.put( &quot;props&quot;, maps );<br>engine.execute( &quot;create (n {props}) return n&quot;, params );</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -421,10 +449,6 @@ engine.execute( &quot;create (n {props}) return n&quot;, params );</p>
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
-    
-
-    
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
@@ -434,7 +458,7 @@ engine.execute( &quot;create (n {props}) return n&quot;, params );</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"BUCHNAME"}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

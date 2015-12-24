@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | TITLE OF YOUR BOOK</title>
+        <title>Introduction | Dev Notes</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is a template for writing books with gitbook. Grundfile.js was heavily inspired bythe JavaScript book at https://github.com/GitbookIO/javascript">
+        <meta name="description" content="Contains notes written while learning different languages and new concepts and techniques for future reference and others to use.">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -30,13 +30,9 @@
         
 <link rel="stylesheet" href="gitbook/style.css">
 
-    
-    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
-    
-
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1450804217199">
+    <div class="book" data-level="0" data-basepath="." data-revision="1450954445727">
     
 
 <div class="book-summary">
@@ -94,6 +90,22 @@
                             <b>1.1.</b>
                         
                          Basics
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="docker/docker-file.html">
+            
+                
+                    <a href="./docker/docker-file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         Docker File
                     </a>
                 
             
@@ -316,7 +328,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >TITLE OF YOUR BOOK</a>
+        <a href="./" >Dev Notes</a>
     </h1>
 </div>
 
@@ -326,43 +338,8 @@
                 
                     <section class="normal" id="section-gitbook_1">
                     
-                        <h1 id="title-of-your-book">TITLE OF YOUR BOOK</h1>
-<p>This is a template for writing books with gitbook. Grundfile.js was heavily inspired by
-the JavaScript book at <a href="https://github.com/GitbookIO/javascript" target="_blank">https://github.com/GitbookIO/javascript</a></p>
-<h1 id="pre-requisites">Pre-Requisites</h1>
-<pre><code>$ sudo npm install -g gitbook gitbook-pdf grunt
-$ sudo npm install gitbook-plugin-disqus gitbook-plugin-richquotes grunt-gitbook grunt-gh-pages grunt-contrib-clean
-$ gitbook serve
-```
-
-Notice on older gitbook versions
-========
-
-Please use at least gitbook V0.4.2 or higher. Otherwise, changed links in book.js won&#39;t work.
-
-If you want to install gitbook in version 0.4.2, type
-</code></pre><p>$ sudo npm install -g gitbook@0.4.2</p>
-<pre><code>
-
-Customization
-========
-
-Adapt book.json to your needs.
-
-**Note:** shortName for disqus plugins equals to the shortname of your http://diqus.com configuration.
-
-Please finde documentation for the richquote Plugin at https://github.com/erixtekila/gitbook-plugin-richquotes
-
-Build the book with grunt
-======
-
-With grunt the book can be published directly to a gh-pages branch on your github repo:
-
-`
-</code></pre><p>$ grunt publish
-```</p>
-<h1 id="license">License</h1>
-<p>This book is published by the <a href="LICENSE.html">following license</a>.</p>
+                        <h1 id="dev-notes">Dev Notes</h1>
+<p>Contains notes written while learning different languages and new concepts and techniques for future reference and others to use.</p>
 
                     
                     </section>
@@ -383,10 +360,6 @@ With grunt the book can be published directly to a gh-pages branch on your githu
 <script src="gitbook/app.js"></script>
 
     
-    <script src="gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
-    
-
-    
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
@@ -396,7 +369,7 @@ With grunt the book can be published directly to a gh-pages branch on your githu
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"BUCHNAME"}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

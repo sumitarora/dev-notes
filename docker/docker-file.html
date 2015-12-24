@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Spark | Dev Notes</title>
+        <title>Docker File | Dev Notes</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../spark/basics.html" />
+    <link rel="next" href="../neo4j/readme.html" />
     
     
-    <link rel="prev" href="../r/basics2.html" />
+    <link rel="prev" href="../docker/basics.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4" data-basepath=".." data-revision="1450954445727">
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1450954445727">
     
 
 <div class="book-summary">
@@ -99,7 +99,7 @@
         </li>
     
         
-        <li class="chapter " data-level="1.2" data-path="docker/docker-file.html">
+        <li class="chapter active" data-level="1.2" data-path="docker/docker-file.html">
             
                 
                     <a href="../docker/docker-file.html">
@@ -212,7 +212,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="spark/readme.html">
+        <li class="chapter " data-level="4" data-path="spark/readme.html">
             
                 
                     <a href="../spark/readme.html">
@@ -338,13 +338,75 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_15">
+                    <section class="exercise" id="section-gitbook_3">
                     
-                        <h1 id="apache-sparkassetslogo_sparkpng"><img src="/assets/logo_spark.png" alt="Apache Spark"></h1>
-<ul>
-<li>Apache Spark is a fast and general engine for large-scale data processing.</li>
-<li><a href="http://spark.apache.org/" target="_blank">http://spark.apache.org/</a></li>
-</ul>
+                        <div class="header">
+    <h2>Exercise</h2>
+</div>
+<div class="alert alert-success">
+    <b>Correct!</b>
+</div>
+
+<div class="alert alert-danger error-message">
+    <b>False!</b>
+</div>
+
+<div class="message">
+    <h1 id="docker-file-examples">Docker File Examples</h1>
+
+</div>
+<div class="editor" style="height: 220px">FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN echo &quot;\ndaemon off;&quot; &gt;&gt; /etc/nginx/nginx.conf
+
+ADD /site.conf /etc/nginx/sites-available/default
+
+VOLUME [&quot;/website_data&quot;]
+
+EXPOSE 80
+
+CMD [&quot;nginx&quot;]</div>
+
+<pre class="hidden code-solution">FROM dockerfile/ubuntu
+
+RUN apt-get update
+RUN apt-get install nginx
+
+EXPOSE 80
+
+CMD [&quot;nginx&quot;]
+-v /src/webapp: /opt/webapp //if i dnt expose and run
+docker run -p 49160:8080 -d node
+docker run -v /Users/wsargent/myapp/src:/src</pre>
+<pre class="hidden code-validation">FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y nodejs
+RUN apt-get install -y npm
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+
+COPY . /src
+RUN cd /src; npm install
+EXPOSE  8080
+CMD [&quot;node&quot;, &quot;/src/index.js&quot;]
+
+
+docker build -t node
+
+docker run -v /Users/wsargent/myapp/src:/src
+
+docker run -v /Users/sumitarora/Kitematic/test:/src -p 49160:8080 -d
+
+docker run -d -P --name web -v / src / webapp: / opt / webapp training / webapp python app.py</pre>
+
+
+<div class="buttons">
+    <a href="#" class="button size-2 action-submit">Submit</a>
+    <a href="#" class="button size-2 action-solution">Solution</a>
+</div>
 
                     
                     </section>
@@ -355,10 +417,10 @@
         </div>
 
         
-        <a href="../r/basics2.html" class="navigation navigation-prev " aria-label="Previous page: Basics 2"><i class="fa fa-angle-left"></i></a>
+        <a href="../docker/basics.html" class="navigation navigation-prev " aria-label="Previous page: Basics"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../spark/basics.html" class="navigation navigation-next " aria-label="Next page: Basics"><i class="fa fa-angle-right"></i></a>
+        <a href="../neo4j/readme.html" class="navigation navigation-next " aria-label="Next page: Neo4j"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

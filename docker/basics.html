@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Basics | TITLE OF YOUR BOOK</title>
+        <title>Basics | Dev Notes</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../neo4j/readme.html" />
+    <link rel="next" href="../docker/docker-file.html" />
     
     
     <link rel="prev" href="../docker/readme.html" />
@@ -32,13 +32,9 @@
         
 <link rel="stylesheet" href="../gitbook/style.css">
 
-    
-    <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
-    
-
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1450804217199">
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="1450954445727">
     
 
 <div class="book-summary">
@@ -96,6 +92,22 @@
                             <b>1.1.</b>
                         
                          Basics
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="docker/docker-file.html">
+            
+                
+                    <a href="../docker/docker-file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         Docker File
                     </a>
                 
             
@@ -318,7 +330,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >TITLE OF YOUR BOOK</a>
+        <a href="../" >Dev Notes</a>
     </h1>
 </div>
 
@@ -328,72 +340,125 @@
                 
                     <section class="normal" id="section-gitbook_2">
                     
-                        <p>Docker
-boot2docker up
-boot2docker ip
-docker info
-docker version
-docker ps -l
-docker ps -a</p>
-<p>docker images
-docker pull centos
-docker search sinatra
-docker commit
-docker build -t=&quot;ouruser/sinatra:v2&quot;
-docker push ouruser/sinatra
-docker tag 5db5f8471261 ouruser/sinatra:devel
-docker rmi training/sinatra
-docker exec -it 11d3ca70deec bash</p>
-<p>docker top nostalgic_morse
-docker inspect nostalgic_morse
-docker logs -f nostalgic_morse
-docker stop nostalgic_morse
-docker rm nostalgic_morse</p>
-<p>export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/sumitarora/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1</p>
-<p>docker run -t -i ubuntu:14.04 /bin/bash</p>
-<p>docker run -t -i c3495713411d /bin/bash</p>
-<p>docker build -t [img] .</p>
-<p>-d = keep running headless
-docker run -p 49160:8080 -d [img]</p>
-<p>docker run -i -t node2 /bin/bash</p>
-<p>docker 954036e84223 -p 49160:8080</p>
-<p>docker run -i -t node2 -p 49160:8080 -v /Users/sumitarora/workspace/docker/docker-node-hello/abc:/abc /bin/bash</p>
-<p>/Users/sumitarora/workspace/docker/docker-node-hello/abc</p>
-<p>FROM ubuntu</p>
-<p>RUN apt-get update
-RUN apt-get install -y nginx
-RUN echo &quot;\ndaemon off;&quot; &gt;&gt; /etc/nginx/nginx.conf</p>
-<p>ADD /site.conf /etc/nginx/sites-available/default</p>
-<p>VOLUME [&quot;/website_data&quot;]</p>
-<p>EXPOSE 80</p>
-<p>CMD [&quot;nginx&quot;]</p>
-<p>FROM dockerfile/ubuntu</p>
-<p>RUN apt-get update
-RUN apt-get install nginx</p>
-<p>EXPOSE 80</p>
-<p>CMD [&quot;nginx&quot;]</p>
-<p>-v /src/webapp: /opt/webapp</p>
-<ol>
-<li>if i dnt expose and run</li>
-</ol>
-<p>docker run -p 49160:8080 -d node
-docker run -v /Users/wsargent/myapp/src:/src</p>
-<p>FROM ubuntu</p>
-<p>RUN apt-get update
-RUN apt-get install -y nodejs
-RUN apt-get install -y npm
-RUN ln -s /usr/bin/nodejs /usr/bin/node</p>
-<p>COPY . /src
-RUN cd /src; npm install
-EXPOSE  8080
-CMD [&quot;node&quot;, &quot;/src/index.js&quot;]</p>
-<p>docker build -t node</p>
-<p>docker run -v /Users/wsargent/myapp/src:/src</p>
-<p>docker run -v /Users/sumitarora/Kitematic/test:/src -p 49160:8080 -d</p>
-<p>docker run -d -P --name web -v / src / webapp: / opt / webapp training / webapp python app.py</p>
-<p><a href="https://www.youtube.com/watch?v=2Gi3qF7aM-A" target="_blank">https://www.youtube.com/watch?v=2Gi3qF7aM-A</a></p>
+                        <h1 id="commands">Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boot2docker up</td>
+<td>--</td>
+</tr>
+<tr>
+<td>boot2docker ip</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker info</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker version</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker ps -l</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker ps -a</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker images</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker pull <image></td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker search <name></td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker commit</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker build -t=&quot;ouruser/sinatra:v2&quot;</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker push ouruser/sinatra</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker tag 5db5f8471261 ouruser/sinatra:devel</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker rmi training/sinatra</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker exec -it 11d3ca70deec bash</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker top nostalgic_morse</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker inspect nostalgic_morse</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker logs -f nostalgic_morse</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker stop nostalgic_morse</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker rm nostalgic_morse</td>
+<td>--</td>
+</tr>
+<tr>
+<td>export DOCKER_HOST=tcp://192.168.59.103:2376</td>
+<td>--</td>
+</tr>
+<tr>
+<td>export DOCKER_CERT_PATH=/Users/sumitarora/.boot2docker/certs/boot2docker-vm</td>
+<td>--</td>
+</tr>
+<tr>
+<td>export DOCKER_TLS_VERIFY=1</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker run -t -i ubuntu:14.04 /bin/bash</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker run -t -i c3495713411d /bin/bash</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker build -t [img] .</td>
+<td>--</td>
+</tr>
+<tr>
+<td>docker run -p 49160:8080 -d [img]</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -407,17 +472,13 @@ CMD [&quot;node&quot;, &quot;/src/index.js&quot;]</p>
         <a href="../docker/readme.html" class="navigation navigation-prev " aria-label="Previous page: Docker"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../neo4j/readme.html" class="navigation navigation-next " aria-label="Next page: Neo4j"><i class="fa fa-angle-right"></i></a>
+        <a href="../docker/docker-file.html" class="navigation navigation-next " aria-label="Next page: Docker File"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
 <script src="../gitbook/app.js"></script>
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
-    
 
     
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -429,7 +490,7 @@ CMD [&quot;node&quot;, &quot;/src/index.js&quot;]</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"BUCHNAME"}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
