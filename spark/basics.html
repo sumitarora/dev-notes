@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="4.1" data-basepath=".." data-revision="1451063130306">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1453178989846">
     
 
 <div class="book-summary">
@@ -156,67 +156,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3" data-path="r/readme.html">
-            
-                
-                    <a href="../r/readme.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                         R
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="3.1" data-path="r/basics.html">
-            
-                
-                    <a href="../r/basics.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                         Basics
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.2" data-path="r/basics2.html">
-            
-                
-                    <a href="../r/basics2.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                         Basics 2
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4" data-path="spark/readme.html">
+        <li class="chapter " data-level="3" data-path="spark/readme.html">
             
                 
                     <a href="../spark/readme.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>4.</b>
+                            <b>3.</b>
                         
                          Spark
                     </a>
@@ -227,13 +173,13 @@
                 
     
         
-        <li class="chapter active" data-level="4.1" data-path="spark/basics.html">
+        <li class="chapter active" data-level="3.1" data-path="spark/basics.html">
             
                 
                     <a href="../spark/basics.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>4.1.</b>
+                            <b>3.1.</b>
                         
                          Basics
                     </a>
@@ -336,462 +282,51 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_14">
+                    <section class="normal" id="section-gitbook_7">
                     
-                        <p>data = [1, 2, 3, 4, 5]
-data = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1, 2, 3]</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a1
-[(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;), (4, &#39;d&#39;), (5, &#39;e&#39;)]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>• union = combine two rdd&#39;s
-• intersection = common elements
-• subtract = diiference
-• distinct = get distinct elements in set
-• cartesian = all combinations of two sets
-• zip = combine two rdd&#39;s</p>
-<p>all elements = &gt;&gt;&gt; a1.union(a2).collect()
-[1, 2, 3, 4, 5, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1, 2, 3]</p>
-<p>all unique elements = &gt;&gt;&gt; a1.union(a2).distinct().collect()
-[&#39;a&#39;, 1, 2, &#39;c&#39;, 3, &#39;b&#39;, 4, 5]</p>
-<p>elements only in a = &gt;&gt;&gt; a1.subtract(a1.intersection(a2)).collect()
-[4, 5]</p>
-<p>elements only in b = &gt;&gt;&gt; a2.subtract(a1.intersection(a2)).collect()
-[&#39;c&#39;, &#39;b&#39;, &#39;a&#39;]</p>
-<p>common elements = &gt;&gt;&gt; a1.intersection(a2).collect()
-[1, 2, 3]</p>
-<p>elements not common = &gt;&gt;&gt; a1.union(a2).distinct().subtract(a1.intersection(a2)).collect()
-[&#39;a&#39;, &#39;c&#39;, &#39;b&#39;, 4, 5]</p>
-<p>sims.union(goldStandard).distinct().subtract(sims.intersection(goldStandard)).collect()</p>
-<p>• map - done
-• filter - done
-• flatMap - done
-• mapPartitions
-• mapPartitionsWithIndex
-• groupBy
-• sortBy</p>
-<p>• sample
-• randomSplit</p>
-<p>• union - done
-• intersection - done
-• subtract - done
-• distinct - done
-• cartesian - done
-• zip - done</p>
-<p>• keyBy
-• zipWithIndex
-• zipWithUniqueID
-• zipPartitions
-• coalesce
-• repartition
-• repartitionAndSortWithinPartitions • pipe</p>
-<p>• reduce - done
-• collect
-• aggregate
-• fold
-• first
-• take
-• forEach
-• top
-• treeAggregate
-• treeReduce
-• forEachPartition • collectAsMap
-• count
-• takeSample
-• max
-• min
-• sum
-• histogram
-• mean
-• variance
-• stdev
-• sampleVariance
-• countApprox
-• countApproxDistinct
-• takeOrdered
-• saveAsTextFile
-• saveAsSequenceFile
-• saveAsObjectFile
-• saveAsHadoopDataset
-• saveAsHadoopFile
-• saveAsNewAPIHadoopDataset
-• saveAsNewAPIHadoopFile</p>
-<p>amazonRecToToken = amazonSmall.map(lambda l: (l[0], tokenize(l[1])))
-googleRecToToken = googleSmall.map(lambda l: (l[0], tokenize(l[1])))</p>
-<p>idfsSmall = idfs(amazonRecToToken.union(googleRecToToken))
-uniqueTokenCount = idfsSmall.count()</p>
-<p>fullCorpusRDD = amazonFullRecToToken.union(googleFullRecToToken)
-idfsFull = idfs(fullCorpusRDD)
-idfsFullCount = idfsFull.count()
-print &#39;There are %s unique tokens in the full datasets.&#39; % idfsFullCount</p>
-<h1 id="recompute-idfs-for-full-dataset">Recompute IDFs for full dataset</h1>
-<h1 id="idfsfullweights--idfsfullcorpusrdd">idfsFullWeights = idfs(fullCorpusRDD)</h1>
-<h1 id="idfsfullbroadcast--scbroadcastidfsfullweights">idfsFullBroadcast = sc.broadcast(idfsFullWeights)</h1>
-<h1 id="pre-compute-tf-idf-weights--build-mappings-from-record-id-weight-vector">Pre-compute TF-IDF weights.  Build mappings from record ID weight vector.</h1>
-<p>amazonTokens = amazonFullRecToToken.flatMap(lambda l: l[1]).distinct()
-print amazonTokens.count()</p>
-<p>googleTokens = googleFullRecToToken.flatMap(lambda l: l[1]).distinct()
-print googleTokens.count()</p>
-<h1 id="amazonweightsrdd--tfidfamazontokensidfsfullbroadcast">amazonWeightsRDD = tfidf(amazonTokens,idfsFullBroadcast)</h1>
-<h1 id="googleweightsrdd--tfidfgoogletokensidfsfullbroadcast">googleWeightsRDD = tfidf(googleTokens,idfsFullBroadcast)</h1>
-<h1 id="print-there-are-s-amazon-weights-and-s-google-weights--amazonweightsrddcount">print &#39;There are %s Amazon weights and %s Google weights.&#39; % (amazonWeightsRDD.count(),</h1>
-<h1 id="googleweightsrddcount">googleWeightsRDD.count())</h1>
-<p>tfidf(tokens, idfs):</p>
-<p>def idfs(corpus):
-def tfidf(tokens, idfs):</p>
-<p>val file = sc.textFile(&quot;/Users/sumitarora/Desktop/temp/gistfile1.txt&quot;);
-<a href="http://stanford.edu/~rezab/sparkworkshop/slides/holden.pdf" target="_blank">http://stanford.edu/~rezab/sparkworkshop/slides/holden.pdf</a>
-<a href="https://spark-summit.org/wp-content/uploads/2015/03/SparkSummitEast2015-sample_slides.pdf" target="_blank">https://spark-summit.org/wp-content/uploads/2015/03/SparkSummitEast2015-sample_slides.pdf</a>
-<a href="http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html" target="_blank">http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html</a>
-<a href="http://www.supergloo.com/fieldnotes/apache-spark-examples-of-transformations/#map" target="_blank">http://www.supergloo.com/fieldnotes/apache-spark-examples-of-transformations/#map</a></p>
-<p><a href="https://github.com/jspm/jspm-cli/blob/master/docs/getting-started.md" target="_blank">https://github.com/jspm/jspm-cli/blob/master/docs/getting-started.md</a></p>
-<p>map()
-val rows = records.map(_.split(&#39;,&#39;))
-rows.take(5)</p>
-<p>intersection()
-cartesion()</p>
-<p>flatMap()
-// scala&gt; sc.parallelize(List(1,2,3)).flatMap(x=&gt;List(x,x,x)).collect
-// res200: Array[Int] = Array(1, 1, 1, 2, 2, 2, 3, 3, 3)</p>
-<p>// scala&gt; sc.parallelize(List(1,2,3)).map(x=&gt;List(x,x,x)).collect
-// res201: Array[List[Int]] = Array(List(1, 1, 1), List(2, 2, 2), List(3, 3, 3))</p>
-<p>distinct()
-// distinct by ip address</p>
-<p>pipe()</p>
-<p>filter()
-rows.filter(<em>(5) == &quot;Female&quot;).count()
-rows.filter(</em>(5) == &quot;Male&quot;).count()</p>
-<p>groupByKey()
-// count by country
-val pairsByCountry = rows.map(row =&gt; (row(4), 1))
-val groupByCountry = pairsByCountry.groupByKey()</p>
-<p>coalesce()</p>
-<p>mapPartitions()</p>
-<p>reduceByKey()</p>
-<p>repartition()</p>
-<p>mapPartitionsWithIndex()
-//  List(x.next).iterator
-val records = file.mapPartitionsWithIndex(
-(i, iterator) =&gt;
-    if (i == 0 &amp;&amp; iterator.hasNext) {
-       iterator.next
-       iterator
-    } else iterator)</p>
-<p>sortByKey()
-// count by country and then sork by key and value</p>
-<p>partitionBy()</p>
-<p>sample()
-rows.sample(true, 0.4).count()</p>
-<p>join()
-// split random and join</p>
-<p>union()
-// split random and take union</p>
-<p>cogroup()</p>
-<p>// src is your RDD
-val noHeader = src.mapPartitionsWithIndex(
-(i, iterator) =&gt;
-    if (i == 0 &amp;&amp; iterator.hasNext) {
-       iterator.next
-       iterator
-    } else iterator)</p>
-<pre><code>val wordsList = List(&quot;cat&quot;, &quot;elephant&quot;, &quot;rat&quot;, &quot;rat&quot;, &quot;cat&quot;)
+                        <h1 id="intro-to-spark">Intro to Spark</h1>
+<p><strong>Starting Spark Shell</strong></p>
+<pre><code class="lang-shell">% ./spark-shell                                                                      ✹ ✭
+Spark assembly has been built with Hive, including Datanucleus jars on classpath
+16/01/06 10:43:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  &#39;_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.3.0
+      /_/
+
+Using Scala version 2.10.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_25)
+Type in expressions to have them evaluated.
+Type :help for more information.
+Spark context available as sc.
+SQL context available as sqlContext.
+
+scala&gt;
+</code></pre>
+<p><strong>Creating List RDD</strong></p>
+<pre><code class="lang-shell">scala&gt; val wordsList = List(&quot;cat&quot;, &quot;elephant&quot;, &quot;rat&quot;, &quot;rat&quot;, &quot;cat&quot;)
+wordsList: List[String] = List(cat, elephant, rat, rat, cat)
+</code></pre>
+<p><strong>Map Example</strong></p>
+<pre><code class="lang-shell">val wordsList = List(&quot;cat&quot;, &quot;elephant&quot;, &quot;rat&quot;, &quot;rat&quot;, &quot;cat&quot;)
 val wordsRDD = sc.parallelize(wordsList, 5);
 wordsRDD.map(w =&gt; w + &quot;s&quot;).collect()
-
-val pluralLengths = wordsRDD.map(w =&gt; w + &quot;s&quot;).map(w =&gt; w.length).collect()
-val pairsRDD = wordsRDD.map(w =&gt; (w, 1)).collect()
-val wordsGrouped = pairsRDD.groupByKey()
-wordsGrouped.map( w =&gt; (w._1, sum(w._2)).collect()
-
-wordPairs.reduceByKey(lambda a,b: a + b)
-
-wordCountsCollected = (wordsRDD
-                       .map(lambda word: (word, 1)) \
-                       .reduceByKey(lambda x, y: x + y)
-                       .collect())
-print wordCountsCollected
-uniqueWords = len(wordCountsCollected)
-
-from operator import add
-totalCount = (wordCounts
-              .map(lambda a: a[1])
-              .reduce(lambda a, b: a + b))
-average = totalCount / float(wordCounts.count())
-print totalCount
-print round(average, 2)
-
-return wordListRDD.map(lambda word: (word, 1)).reduceByKey(lambda x, y: x + y)
-
-top15WordsAndCounts = shakeWordsRDD.map(lambda w: (w, 1)).reduceByKey(lambda a,b: a + b).takeOrdered(15, key=lambda x: -x[1])
-
-
-// reading a file
-val file = spark.textFile(&quot;filepath&quot;)
-
-// finding lines containing keyword
-val lines = file.filter(line =&gt; line.contains(&quot;keyword&quot;))
-val lines = file.filter(line =&gt; line.startsWoth(&quot;keyword&quot;))
-val lines = file.filter(_.contains(&quot;keyword&quot;))
-
-
-- read file
-val users = sc.textFile(&quot;/Users/sumitarora/workspace/LearningDataScience/dataset/movies/ml-100k/u.user&quot;)
-val movies = sc.textFile(&quot;/Users/sumitarora/workspace/LearningDataScience/dataset/movies/ml-100k/u.item&quot;)
-val ratings = sc.textFile(&quot;/Users/sumitarora/workspace/LearningDataScience/dataset/movies/ml-100k/u.data&quot;)
-
-- split data
-val usersData = users.map(_.split(&#39;|&#39;))
-val moviesData = movies.map(_.split(&#39;|&#39;))
-val ratingsData = movies.map(_.split(&#39;\t&#39;))
-
-- total number of users
-usersData.count()
-
-- total number of males
-usersData.filter(_(2) == &quot;M&quot;).count()
-
-
-- total numer of females
-usersData.filter(_(2) == &quot;F&quot;).count()
-
-- count of males/females greater/less than age
-usersData.filter(_(2) == &quot;F&quot;).filter(_(1).toInt &lt; 20).count()
-
-usersData.map(_(2)).distinct().count()
-
-- average age of males
-
-- average age of females
-
-- range of ages by all/males/females
-
-- breakdown by occupation by all/males/females
-
-- breakdown by zip by all/males/females
-
-ratings.stats()
-
-
-rating_data = rating_data_raw.map(lambda line: line.split(&quot;\t&quot;))
-   ratings = rating_data.map(lambda fields: int(fields[2]))
-   max_rating = ratings.reduce(lambda x, y: max(x, y))
-   min_rating = ratings.reduce(lambda x, y: min(x, y))
-   mean_rating = ratings.reduce(lambda x, y: x + y) / num_ratings
-   median_rating = np.median(ratings.collect())
-   ratings_per_user = num_ratings / num_users
-   ratings_per_movie = num_ratings / num_movies
-   print &quot;Min rating: %d&quot; % min_rating
-   print &quot;Max rating: %d&quot; % max_rating
-   print &quot;Average rating: %2.2f&quot; % mean_rating
-   print &quot;Median rating: %d&quot; % median_rating
-   print &quot;Average # of ratings per user: %2.2f&quot; % ratings_per_user
-   print &quot;Average # of ratings per movie: %2.2f&quot; % ratings_per_movie
-
- user_ratings_grouped = rating_data.map(lambda fields: (int(fields[0]),
-   int(fields[2]))).\
-       groupByKey()
-
-
-user_ratings_byuser_local = user_ratings_byuser.map(lambda (k, v):
-   v).collect()
-   hist(user_ratings_byuser_local, bins=200, color=&#39;lightblue&#39;,
-   normed=True)
-   fig = matplotlib.pyplot.gcf()
-   fig.set_size_inches(16,10)       
-
-
-
-
-
-parsed_logs, access_logs, failed_logs = parseLogs()
-
-# Calculate statistics based on the content size.
-content_sizes = access_logs.map(lambda log: log.content_size).cache()
-print &#39;Content Size Avg: %i, Min: %i, Max: %s&#39; % (
-    content_sizes.reduce(lambda a, b : a + b) / content_sizes.count(),
-    content_sizes.min(),
-    content_sizes.max())
-
-
-responseCodeToCount = (access_logs
-                       .map(lambda log: (log.response_code, 1))
-                       .reduceByKey(lambda a, b : a + b)
-                       .cache())
-responseCodeToCountList = responseCodeToCount.take(100)
-
-
-labels = responseCodeToCount.map(lambda (x, y): x).collect()
-print labels
-count = access_logs.count()
-fracs = responseCodeToCount.map(lambda (x, y): (float(y) / count)).collect()
-print fracs
-
-hostCountPairTuple = access_logs.map(lambda log: (log.host, 1))
-hostSum = hostCountPairTuple.reduceByKey(lambda a, b : a + b)
-hostMoreThan10 = hostSum.filter(lambda s: s[1] &gt; 10)
-hostsPick20 = (hostMoreThan10
-               .map(lambda s: s[0])
-               .take(20))
-print &#39;Any 20 hosts that have accessed more then 10 times: %s&#39; % hostsPick20
-
-# Top Endpoints
-endpointCounts = (access_logs
-                  .map(lambda log: (log.endpoint, 1))
-                  .reduceByKey(lambda a, b : a + b))
-
-topEndpoints = endpointCounts.takeOrdered(10, lambda s: -1 * s[1])
-
-
-not200 = access_logs.filter(lambda log: log.response_code == 404)
-endpointCountPairTuple = not200.map(lambda log: (log.endpoint, 1))
-endpointSum = endpointCountPairTuple.reduceByKey(lambda a, b : a + b)
-topTenErrURLs = endpointSum.takeOrdered(10, lambda s: -1 * s[1])
-
-
-access_logs.map(lambda log: (log.host, log.date_time.day()))
-dayGroupedHosts = dayToHostPairTuple.groupByKey
-dayHostCount = dayGroupedHosts.map(lambda s: (s[0], count(s[1])))
-dailyHosts = dayHostCount.takeOrdered(lambda s: -1 * s[1]).cache()
-
-hosts = access_logs.map(lambda log: log.host))
-uniqueHosts = hosts.distinct()
-
-dayToHostPairTuple = access_logs.map(lambda log: (log.host, log.date_time.day()))
-
-dayGroupedHosts = dayToHostPairTuple.groupByKey()
-
-dayHostCount = dayGroupedHosts.&lt;FILL IN&gt;
-
-dailyHosts = (dayHostCount
-              &lt;FILL IN&gt;)
-dailyHostsList = dailyHosts.take(30)
-print &#39;Unique hosts per day: %s&#39; % dailyHostsList
-
-
-print &#39;Top Ten Endpoints: %s&#39; % topEndpoints
-
-        host          = match.group(1),
-        client_identd = match.group(2),
-        user_id       = match.group(3),
-        date_time     = parse_apache_time(match.group(4)),
-        method        = match.group(5),
-        endpoint      = match.group(6),
-        protocol      = match.group(7),
-        response_code = int(match.group(8)),
-        content_size  = size
-
-
-draw graph
-import matplotlib.pyplot as plt
-
-def pie_pct_format(value):
-    return &#39;&#39; if value &lt; 7 else &#39;%.0f%%&#39; % value
-
-fig = plt.figure(figsize=(4.5, 4.5), facecolor=&#39;white&#39;, edgecolor=&#39;white&#39;)
-colors = [&#39;yellowgreen&#39;, &#39;lightskyblue&#39;, &#39;gold&#39;, &#39;purple&#39;, &#39;lightcoral&#39;, &#39;yellow&#39;, &#39;black&#39;]
-explode = (0.05, 0.05, 0.1, 0, 0, 0, 0)
-patches, texts, autotexts = plt.pie(fracs, labels=labels, colors=colors,
-                                    explode=explode, autopct=pie_pct_format,
-                                    shadow=False,  startangle=125)
-for text, autotext in zip(texts, autotexts):
-    if autotext.get_text() == &#39;&#39;:
-        text.set_text(&#39;&#39;)  # If the slice is small to fit, don&#39;t show a text label
-plt.legend(labels, loc=(0.80, -0.1), shadow=True)
-pass
-
-
-
-
-endpoints = (access_logs
-             .map(lambda log: (log.endpoint, 1))
-             .reduceByKey(lambda a, b : a + b)
-             .cache())
-ends = endpoints.map(lambda (x, y): x).collect()
-counts = endpoints.map(lambda (x, y): y).collect()
-
-fig = plt.figure(figsize=(8,4.2), facecolor=&#39;white&#39;, edgecolor=&#39;white&#39;)
-plt.axis([0, len(ends), 0, max(counts)])
-plt.grid(b=True, which=&#39;major&#39;, axis=&#39;y&#39;)
-plt.xlabel(&#39;Endpoints&#39;)
-plt.ylabel(&#39;Number of Hits&#39;)
-plt.plot(counts)
-pass
-
-
-
-dayToHostPairTuple = access_logs.map(lambda log: (log.date_time.day, log.host))
-
-dayGroupedHosts = dayToHostPairTuple.groupByKey()
-
-dayHostCount = dayGroupedHosts.map(lambda s: (s[0], len(set(s[1]))))
-
-dailyHosts = dayHostCount.sortBy(lambda s: s[0]).cache()
-
-
-
-
-dayAndHostTuple = access_logs.map(lambda log: (log.date_time.day, log.host))
-
-groupedByDay = dayAndHostTuple.groupByKey().map(lambda s: (s[0], len(s[1]) / len(set(s[1]))))
-
-sortedByDay = groupedByDay.sortBy(lambda s: s[0])
-
-avgDailyReqPerHost = sortedByDay
-
-avgDailyReqPerHostList = avgDailyReqPerHost.take(30)
-
-
-daysWithHosts = dailyHosts.map(lambda l: l[0]).collect()
-hosts = dailyHosts.map(lambda l: l[1]).collect()
-
-
-
-errDateCountPairTuple = badRecords.map(lambda r: (r.date_time.day, r.response_code)).groupByKey()
-
-errDateSum = errDateCountPairTuple.map(lambda s: (s[0], len(s[1])))
-
-errDateSorted = (errDateSum.sortBy(lambda s: s[0])).cache()
-
-
-
-Hands on Apache Spark - Part 1
-
-Loading file into apache spark
-val users = sc.textFile(&quot;/Users/sumitarora/workspace/LearningDataScience/dataset/movies/ml-100k/u.user&quot;)
-
-Data which is present in apache spark is list of users delimeted by new line and inofrmation of each users is further delimeted by | within each user. To perform any computation we must split user data for this we use map operation to split data.
-val usersData = users.map(_.split(&#39;|&#39;))
-
-now to get the total number of users we just do
-- usersData.count()
-
-to get the total number of males / females we will use filter operation to filter our data and get result from that.
-usersData.filter(_(2) == &quot;M&quot;).count()
-
-
-similarly we can get total numer of females
-usersData.filter(_(2) == &quot;F&quot;).count()
-
-we can also apply multiple filters at the same time for eg. if we have to get males / females under a particular age. In this example I have take 20 as the age and looking for count of females under the age of 20
-- count of males/females greater/less than age
-usersData.filter(_(2) == &quot;F&quot;).filter(_(1).toInt &lt; 20).count()
-
-- average age of males
-usersData.filter(_(2) == &quot;M&quot;).map(_(1).toInt).reduce( _ + _) / usersData.filter(_(2) == &quot;M&quot;).count()
-
-- average age of females
-usersData.filter(_(2) == &quot;F&quot;).map(_(1).toInt).reduce( _ + _) / usersData.filter(_(2) == &quot;F&quot;).count()
-
-- range of ages by all/males/females
-
-- breakdown by occupation by all/males/females
-
-- breakdown by zip by all/males/females
 </code></pre>
+<p><strong>Word Count Using GroupBy</strong></p>
+<pre><code class="lang-shell">val pairsRDD = wordsRDD.map(w =&gt; (w, 1))
+val wordsGrouped = pairsRDD.groupByKey()
+wordsGrouped.map(w =&gt;(w._1, w._2.sum)).collect()
+</code></pre>
+<p><strong>Reading a file</strong></p>
+<pre><code class="lang-shell">val file = sc.textFile(&quot;/Users/sumitarora/workspace/pbrand/codesnippets/spark/basics.md&quot;)
+</code></pre>
+<p><strong>String Operations</strong></p>
+<pre><code class="lang-shell">val lines = file.filter(line =&gt; line.contains(&quot;hello&quot;)) // Get lines containing word
+val lines = file.filter(line =&gt; line.startsWoth(&quot;keyword&quot;)) // Get lines starting with the word
+val lines = file.filter(_.contains(&quot;keyword&quot;)) // Get lines containing word
+</code></pre>
+
                     
                     </section>
                 
